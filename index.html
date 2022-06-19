@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>NMV Data Collection</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <!-- Fonts -->
+  <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+  <!--Morris Chart CSS -->
+  <link rel="stylesheet" href="assets/plugins/morris/morris.css">
+  <!-- Main Style -->
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <!-- Responsive Style -->
+  <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
+</head>
+
+<body>
+  <div class="app header-default side-nav-dark">
+    <div class="layout">
+      <!-- Header START -->
+      <div class="header navbar">
+        <div class="header-container">
+          <div class="nav-logo">
+            <a href="index.html">
+              <b><img src="assets/img/logo.png" alt=""></b>
+              <span class="logo">
+                <img src="assets/img/logo-text.png" alt="">
+              </span>
+            </a>
+          </div>
+          <ul class="nav-left">
+            <li>
+              <a class="sidenav-fold-toggler" href="javascript:void(0);">
+                <i class="lni-menu"></i>
+              </a>
+              <a class="sidenav-expand-toggler" href="javascript:void(0);">
+                <i class="lni-menu"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Header END -->
+
+      <!-- Side Nav START -->
+      <div class="side-nav expand-lg">
+        <div class="side-nav-inner">
+          <ul class="side-nav-menu">
+            <li class="side-nav-header">
+              <span>Navigation</span>
+            </li>
+            <li class="nav-item dropdown open">
+              <a href="#" class="dropdown-toggle">
+                <span class="icon-holder">
+                  <i class="lni-dashboard"></i>
+                </span>
+                <span class="title">Insert Data</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle" href="email.html">
+                <span class="icon-holder">
+                  <i class="lni-cloud"></i>
+                </span>
+                <span class="title">View Data</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Side Nav END -->
+
+      <!-- Page Container START -->
+      <div class="page-container">
+        <!-- Content Wrapper START -->
+        <div class="main-content">
+          <div class="container-fluid">
+            <!-- Breadcrumb Start -->
+            <div class="breadcrumb-wrapper row">
+              <div class="col-12 col-lg-3 col-md-6">
+                <h4 class="page-title">Dashboard</h4>
+              </div>
+              <div class="col-12 col-lg-9 col-md-6">
+                <ol class="breadcrumb float-right">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="active">/ Insert Data</li>
+                </ol>
+              </div>
+            </div>
+            <!-- Breadcrumb End -->
+          </div>
+
+          <!-- Main Form Strats-->
+          <div class="col-12 grid-margin">
+            <div class="card">
+              <div class="card-header border-bottom">
+                <h4 class="card-title">Survey Form</h4>
+              </div>
+              <div class="card-body">
+                <form class="form-sample" action = "db.php" method="post">
+                  <p class="card-description">
+                    Basic Information
+                  </p>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Name</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="company_Name" placeholder="Name of Company">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Stating Date</label>
+                        <div class="col-sm-9">
+                          <input type="date" class="form-control" name="starting_date" placeholder="Staring Date">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Founder</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" name="founder_name" placeholder="Name of Founder">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" name="email" placeholder="Company Email">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Phone</label>
+                        <div class="col-sm-9">
+                          <input type="number" class="form-control" name="phone_no" placeholder="Contact Number">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                    </div>
+                  </div>
+                  <p class="card-description">
+                    Company Details
+                  </p>
+                  <div class="form-group">
+                    <label for="aim">Aim</label>
+                    <input type="text" class="form-control" name="aim" placeholder="Main AIM of Company">
+                  </div>
+                  <div class="form-group">
+                    <label for="no_of_customer">Number of Customer</label>
+                    <input type="number" class="form-control" name="no_of_customer" placeholder="Number of Customer in the Staring">
+                  </div>
+                  <div class="form-group">
+                    <label for="no_of_employee">Number of Employee</label>
+                    <input type="number" class="form-control" name="no_of_employee" placeholder="Number of Employee">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Investement</label>
+                    <input type="number" class="form-control" name="total_investement" placeholder="Total Investement">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Annual Income</label>
+                    <input type="number" class="form-control" name="annual_income" placeholder="Total Annual Income">
+                  </div>
+                  <div class="form-group">
+                    <label for="recruiment">Recruitment</label>
+                    <input type="text" class="form-control" name="recruiment" placeholder="Recruitment Process">
+                  </div>
+                  <div class="form-group">
+                    <label for="idea_startup">Idea of Startup</label>
+                    <input type="text" class="form-control" name="idea_startup" placeholder="Main Idea of Startup">
+                  </div>
+                  <div class="form-group">
+                    <label for="legal_process">Legal Procedures</label>
+                    <input type="text" class="form-control" name="legal_process" placeholder="What are the legal Process?">
+                  </div>
+                  <div class="form-group">
+                    <label for="problems">Obligations & Problems</label>
+                    <input type="text" class="form-control" name="problems" placeholder="What are the Obligations & Problems?">
+                  </div>
+                  <div class="form-group">
+                    <label for="user_demand">Kind of User Demand</label>
+                    <input type="text" class="form-control" name="user_demand" placeholder="What are the kind of user demand?">
+                  </div>
+                  <div class="form-group">
+                    <label for="suggestion">Suggestions for Students in College</label>
+                    <input type="text" class="form-control" name="suggestions" placeholder="Do you have any suggestions for students in college?">
+                  </div>
+                  <button type="submit" class="btn btn-common mr-3">Submit</button>
+                  <button type="reset" class="btn btn-light mr-3">Reset</button>
+                  </form>
+              </div>
+            </div>
+          </div>
+          <!-- Main Form Ends -->
+
+          <!-- Footer START -->
+          <footer class="content-footer">
+            <div class="footer">
+              <div class="copyright">
+                <span>Copyright © 2022 <b class="text-dark">NMV</b>. All Right Reserved</span>
+                <span class="go-right">
+                  <a href="" class="text-gray">Term &amp; Conditions</a>
+                  <a href="" class="text-gray">Privacy &amp; Policy</a>
+                </span>
+              </div>
+            </div>
+          </footer>
+          <!-- Footer END -->
+        </div>
+        <!-- Page Container END -->
+      </div>
+    </div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader" id="loader-1"></div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.app.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!--Morris Chart-->
+    <script src="assets/plugins/morris/morris.min.js"></script>
+    <script src="assets/plugins/raphael/raphael-min.js"></script>
+    <script src="assets/js/dashborad1.js"></script>
+
+</body>
+
+</html>
