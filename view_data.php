@@ -60,7 +60,7 @@
               </a>
             </li>
             <li class="nav-item dropdown open">
-              <a class="dropdown-toggle" href="view_data.html">
+              <a class="dropdown-toggle" href="view_data.php">
                 <span class="title">View Data</span>
               </a>
             </li>
@@ -69,7 +69,7 @@
       </div>
       <!-- Side Nav END -->
 
-      
+
 
       <!-- Page Container START -->
       <div class="page-container">
@@ -91,8 +91,8 @@
             <!-- Breadcrumb End -->
           </div>
 
-           <!-- Main Form Strats-->
-           <div class="col-12 grid-margin">
+          <!-- Main Form Strats-->
+          <div class="col-12 grid-margin">
             <div class="col-12 m-b-10">
               <div class="card">
                 <div class="card-header border-bottom">
@@ -115,23 +115,40 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td>
-                          <td>@mdo</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">2</th>
-                          <td>Jacob</td>
-                          <td>Thornton</td>
-                          <td>@fat</td>
-                        </tr>
-                        <tr>
-                          <th scope="row">3</th>
-                          <td>Larry</td>
-                          <td>The Bird</td>
-                          <td>@twitter</td>
-                        </tr>
+                          <?php
+                            $conn = new mysqli('localhost','root','','nmvdata');
+
+                            if($conn->connect_error)
+                            {
+                              die('Connection Failed : '.$conn->connect_error);
+                            }
+                            else
+                            {
+
+                              $sql = "SELECT `company_id`, `name`, `founder`, `email`, `phone` FROM `nmvsurvey`";
+                              $result = mysqli_query($conn, $sql);
+
+                              if($result)
+                              {
+                                while($row = mysqli_fetch_assoc($result))
+                                {
+                                  $id = $row['company_id'];
+                                  $name = $row['name'];
+                                  $founder = $row['founder'];
+                                  $email = $row['email'];
+                                  $phone = $row['phone'];
+                                  ?>
+                                  <td><?php echo $id ?></td>
+                                  <td><?php echo $name ?></td>
+                                  <td><?php echo $founder?></td>
+                                  <td><?php echo $email ?></td>
+                                  <td><?php echo $phone ?></td>
+                                  </tr>
+                                  <?php
+                                }
+                              }
+                            }
+                          ?>
                       </tbody>
                     </table>
                   </div>
