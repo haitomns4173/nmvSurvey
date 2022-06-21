@@ -96,7 +96,7 @@
             <div class="col-12 m-b-10">
               <div class="card">
                 <div class="card-header border-bottom">
-                  <h4 class="card-title">Hoverable rows</h4>
+                  <h4 class="card-title">View Data Table</h4>
                 </div>
                 <div class="card-body">
                   <p class="text-muted m-b-20 box-content">
